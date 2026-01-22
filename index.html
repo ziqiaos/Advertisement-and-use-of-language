@@ -1,85 +1,68 @@
-<div id="survey" style="display:none;">
-  <h3>Questionnaire</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advertisement Experiment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    video {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
 
-  <!-- Question 1 -->
-  <p>
-    I trust this brand of toothpaste “The Star”.
-  </p>
-  <label>
-    <input type="radio" name="q1" value="1">
-    I strongly disagree with this comment.
-  </label><br>
-  <label>
-    <input type="radio" name="q1" value="2">
-    I disagree with this comment.
-  </label><br>
-  <label>
-    <input type="radio" name="q1" value="3">
-    I disagree nor agree with this comment.
-  </label><br>
-  <label>
-    <input type="radio" name="q1" value="4">
-    I agree with this comment.
-  </label><br>
-  <label>
-    <input type="radio" name="q1" value="5">
-    I strongly agree with this comment.
-  </label>
+  <h2>Advertisement Viewing</h2>
+  <p>Please watch the following advertisement carefully. The questionnaire will appear after the video finishes.</p>
 
-  <br><br>
+  <!-- Video -->
+  <video id="adVideo" controls>
+    <source src="SCfair - trial A,B.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-  <!-- Question 2 -->
-  <p>
-    2. This advertisement is appealing.
-  </p>
-  <label>
-    <input type="radio" name="q2" value="1">
-    I strongly disagree with this comment.
-  </label><br>
-  <label>
-    <input type="radio" name="q2" value="2">
-    I disagree with this comment.
-  </label><br>
-  <label>
-    <input type="radio" name="q2" value="3">
-    I disagree nor agree with this comment.
-  </label><br>
-  <label>
-    <input type="radio" name="q2" value="4">
-    I agree with this comment.
-  </label><br>
-  <label>
-    <input type="radio" name="q2" value="5">
-    I strongly agree with this comment.
-  </label>
+  <!-- Survey -->
+  <div id="survey" style="display:none;">
+    <h3>Questionnaire</h3>
 
-  <br><br>
+    <!-- Question 1 -->
+    <p>I trust this brand of toothpaste “The Star”.</p>
+    <label><input type="radio" name="q1" value="1"> I strongly disagree with this comment.</label><br>
+    <label><input type="radio" name="q1" value="2"> I disagree with this comment.</label><br>
+    <label><input type="radio" name="q1" value="3"> I disagree nor agree with this comment.</label><br>
+    <label><input type="radio" name="q1" value="4"> I agree with this comment.</label><br>
+    <label><input type="radio" name="q1" value="5"> I strongly agree with this comment.</label><br><br>
 
-  <!-- Question 3 -->
-  <p>
-    3. I remembered that there was(are) materials of the toothpaste mentioned in the advertisement.
-  </p>
+    <!-- Question 2 -->
+    <p>This advertisement is appealing.</p>
+    <label><input type="radio" name="q2" value="1"> I strongly disagree with this comment.</label><br>
+    <label><input type="radio" name="q2" value="2"> I disagree with this comment.</label><br>
+    <label><input type="radio" name="q2" value="3"> I disagree nor agree with this comment.</label><br>
+    <label><input type="radio" name="q2" value="4"> I agree with this comment.</label><br>
+    <label><input type="radio" name="q2" value="5"> I strongly agree with this comment.</label><br><br>
 
-  <label>
-    <input type="radio" name="q3" value="specific">
-    I think
-    <input type="text" name="materials" placeholder="material(s)">
-    (material(s) in this toothpaste) is mentioned in this advertisement.
-  </label>
-  <br><br>
+    <!-- Question 3 -->
+    <p>I remembered that there was (were) material(s) of the toothpaste mentioned in the advertisement.</p>
+    <label><input type="radio" name="q3" value="specific"> I think specific material(s) are mentioned.</label><br>
+    <label><input type="radio" name="q3" value="unsure"> I remember materials were mentioned but not what they are.</label><br>
+    <label><input type="radio" name="q3" value="none"> I do not think any materials were mentioned.</label><br><br>
 
-  <label>
-    <input type="radio" name="q3" value="unsure">
-    I remember something about the material(s) is mentioned but I do not remember what it is.
-  </label>
-  <br><br>
+    <button onclick="alert('Thank you for participating!')">Submit</button>
+  </div>
 
-  <label>
-    <input type="radio" name="q3" value="none">
-    I do not think any material(s) is mentioned.
-  </label>
+  <!-- Script -->
+  <script>
+    const video = document.getElementById("adVideo");
+    const survey = document.getElementById("survey");
 
-  <br><br>
+    video.onended = function () {
+      survey.style.display = "block";
+    };
+  </script>
 
-  <button type="submit">Submit</button>
-</div>
+</body>
+</html>
