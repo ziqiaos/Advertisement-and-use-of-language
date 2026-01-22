@@ -3,54 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <title>Advertising Study</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       padding: 40px;
     }
+
     video {
       width: 80%;
       max-width: 800px;
       margin-bottom: 30px;
     }
-    a.button {
-      display: inline-block;
-      padding: 15px 25px;
-      background-color: #4CAF50;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 5px;
-    }
-    a.button:hover {
-      background-color: #45a049;
+
+    #survey {
+      display: none;
+      margin-top: 40px;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Advertising Study</h1>
+  <h2>Advertisement Viewing</h2>
+  <p>Please watch the advertisement carefully.  
+     The questionnaire will appear after the video.</p>
 
-  <p>Please watch the following advertisement carefully.</p>
-
-  <!-- 视频 -->
-  <video controls>
-    <source src="SCfair - trial A,B.mp4" type="video/mp4">
+  <!-- 广告视频 -->
+  <video id="adVideo" controls>
+    <source src="SCfair - trial C.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <p>After watching the video, please click the button below to complete the questionnaire.</p>
+  <!-- Google Form -->
+  <div id="survey">
+    <h2>Questionnaire</h2>
 
-  <!-- 问卷按钮 -->
-  <a
-    class="button"
-    href="【这里粘你的 Google Form 链接】"
-    target="_blank"
-  >
-    Take the Survey
-  </a>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdC3uLMfNi5OsCbzgMT-XlVQlxqCuDwtEDpsxCT9u4cwBoGiQ/viewform?embedded=true"
+      width="640"
+      height="1200"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
+
+  <script>
+    const video = document.getElementById("adVideo");
+    const survey = document.getElementById("survey");
+
+    video.onended = function () {
+      survey.style.display = "block";
+      survey.scrollIntoView({ behavior: "smooth" });
+    };
+  </script>
 
 </body>
 </html>
