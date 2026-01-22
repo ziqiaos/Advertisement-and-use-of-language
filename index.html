@@ -2,67 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Advertisement Experiment</title>
+  <title>Advertising Study</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      text-align: center;
+      padding: 40px;
     }
     video {
-      max-width: 100%;
-      margin-bottom: 20px;
+      width: 80%;
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+    a.button {
+      display: inline-block;
+      padding: 15px 25px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+    a.button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
+
 <body>
 
-  <h2>Advertisement Viewing</h2>
-  <p>Please watch the following advertisement carefully. The questionnaire will appear after the video finishes.</p>
+  <h1>Advertising Study</h1>
 
-  <!-- Video -->
-  <video id="adVideo" controls>
+  <p>Please watch the following advertisement carefully.</p>
+
+  <!-- 视频 -->
+  <video controls>
     <source src="SCfair - trial A,B.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Survey -->
-  <div id="survey" style="display:none;">
-    <h3>Questionnaire</h3>
+  <p>After watching the video, please click the button below to complete the questionnaire.</p>
 
-    <!-- Question 1 -->
-    <p>I trust this brand of toothpaste “The Star”.</p>
-    <label><input type="radio" name="q1" value="1"> I strongly disagree with this comment.</label><br>
-    <label><input type="radio" name="q1" value="2"> I disagree with this comment.</label><br>
-    <label><input type="radio" name="q1" value="3"> I disagree nor agree with this comment.</label><br>
-    <label><input type="radio" name="q1" value="4"> I agree with this comment.</label><br>
-    <label><input type="radio" name="q1" value="5"> I strongly agree with this comment.</label><br><br>
-
-    <!-- Question 2 -->
-    <p>This advertisement is appealing.</p>
-    <label><input type="radio" name="q2" value="1"> I strongly disagree with this comment.</label><br>
-    <label><input type="radio" name="q2" value="2"> I disagree with this comment.</label><br>
-    <label><input type="radio" name="q2" value="3"> I disagree nor agree with this comment.</label><br>
-    <label><input type="radio" name="q2" value="4"> I agree with this comment.</label><br>
-    <label><input type="radio" name="q2" value="5"> I strongly agree with this comment.</label><br><br>
-
-    <!-- Question 3 -->
-    <p>I remembered that there was (were) material(s) of the toothpaste mentioned in the advertisement.</p>
-    <label><input type="radio" name="q3" value="specific"> I think specific material(s) are mentioned.</label><br>
-    <label><input type="radio" name="q3" value="unsure"> I remember materials were mentioned but not what they are.</label><br>
-    <label><input type="radio" name="q3" value="none"> I do not think any materials were mentioned.</label><br><br>
-
-    <button onclick="alert('Thank you for participating!')">Submit</button>
-  </div>
-
-  <!-- Script -->
-  <script>
-    const video = document.getElementById("adVideo");
-    const survey = document.getElementById("survey");
-
-    video.onended = function () {
-      survey.style.display = "block";
-    };
-  </script>
+  <!-- 问卷按钮 -->
+  <a
+    class="button"
+    href="【这里粘你的 Google Form 链接】"
+    target="_blank"
+  >
+    Take the Survey
+  </a>
 
 </body>
 </html>
